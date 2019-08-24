@@ -1,0 +1,29 @@
+{
+	"manifest_version": 2,
+	"name": "Nyan Cat Progress Bar for YouTube™ for Opera",
+	"description": "This is an extension rewritten from https://chrome.google.com/webstore/detail/nyan-cat-progress-bar-for/bdjaekjkckpdknkfncfnaibkabdcgmkg",
+	"version": "1.0",
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": ["tabs"],
+	"browser_action": {
+        "default_icon": {
+            "19": "icons/icon19.png",
+            "38": "icons/icon38.png"
+      },
+		"default_title": "Click me to Go to YouTube"
+	},
+    "icons":{
+        "128": "icons/icon128.png",
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png"
+    },
+    "content_scripts": [
+		{
+			"matches": ["*://*.youtube.com/*"],
+			"css": ["mystyles.css"]
+		}
+	],
+    "web_accessible_resources": [ "nyanimated.gif" ]
+}
